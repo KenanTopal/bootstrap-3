@@ -31,14 +31,3 @@ const faqList = [
 		answer: `No, you will not be required to pass a technical elimination process to qualify. There will be a simple assessment of your communication skills. From beginner to advanced, all skill levels are welcome!`,
 	},
 ];
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => { 
   loadFaq();
+  loadMap();
 })
 
 
@@ -24,13 +25,39 @@ function loadFaq() {
           </div>
         </div>
       `;
-      console.log(text)
+      // console.log(text)
       return text;
     }).join('')}
     </div>
   `;
-
-
-
   document.getElementById('faq-section').appendChild(div);
+}
+
+window.addEventListener("scroll", (e) => { 
+  console.log(this.scrollY)
+  if (this.scrollY < 500) {
+    // hide the up arrow
+    document.getElementById('arrow-up').style.display = 'none';
+  } else { 
+    // show the up arrow
+    document.getElementById("arrow-up").style.display = "block";
+  }
+})
+
+
+function loadMap() { 
+mapboxgl.accessToken =
+	"pk.eyJ1IjoiYWxmcmVkMjAxNiIsImEiOiJja2RoMHkyd2wwdnZjMnJ0MTJwbnVmeng5In0.E4QbAFjiWLY8k3AFhDtErA";
+const map = new mapboxgl.Map({
+	container: "map",
+	// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+	style: "mapbox://styles/mapbox/streets-v11",
+	center: [-73.986498, 40.748377],
+	zoom: 14,
+});
+
+// Create a default Marker and add it to the map.
+const marker1 = new mapboxgl.Marker()
+	.setLngLat([ -73.986498, 40.748377])
+	.addTo(map);
 }
