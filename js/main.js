@@ -51,8 +51,8 @@ mapboxgl.accessToken =
 const map = new mapboxgl.Map({
 	container: "map",
 	// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-	style: "mapbox://styles/mapbox/streets-v11",
-	center: [-73.986498, 40.748377],
+	style: "mapbox://styles/mapbox/streets-v12",
+	center: [-74.5, 40],
 	zoom: 14,
 });
 
